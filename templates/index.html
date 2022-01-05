@@ -81,6 +81,10 @@
             {%- block footer -%}
                 <footer class="footer">
                     <div class="footer__inner">
+                        {%- block copyright -%}
+                            {{ footer::copyright() }}
+                        {%- endblock copyright -%}
+
                         {%- block script -%}
                             {{ footer::script() }}
                         {%- endblock script -%}
