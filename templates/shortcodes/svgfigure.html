@@ -1,0 +1,19 @@
+{# Sample usage: {{ svgfigure(src="array-diagram.svg",
+width="60%",
+position="center"
+caption_position="left",
+caption="An Array",
+caption_style="font-weight: bold; font-style: italic;") }} #}
+
+{% if src %}
+  <figure class="{% if position %}{{ position }}{% else -%} center {%- endif %}" style="position: relative; width: {% if width %}{{ width }}{% else %}50%{% endif %};">
+	{% set src = "content" ~ page.path ~ src %}
+	{% set svg = load_data(path=src, required=true) %}
+	<!--Add proper accessibility to svgs: https://stackoverflow.com/a/4756461/10147642 - if you're reading this in DevTools, and have an idea of how to, feel free to write to me!-->
+	{{ svg | safe }}
+
+	{% if caption %}
+		<figcaption class="{% if caption_position %}{{ caption_position }}{% else -%} center {%- endif %}"{% if caption_style %} style="{{ caption_style | safe }}"{% endif %}>{{ caption }}</figcaption>
+  	{% endif %}
+  </figure>
+{% endif %}
