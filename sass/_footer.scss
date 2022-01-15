@@ -64,4 +64,10 @@
   //     font-size: 0.75rem;
   //   }
   // }
+
+  @media (prefers-color-scheme: light) {
+    img, .socials {
+      filter: brightness(1.1%);
+    }
+  }
 }

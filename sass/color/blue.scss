@@ -5,4 +5,37 @@
   --background: #1D1E28;
   --color: whitesmoke;
   --border-color: rgba(255, 255, 255, .1);
+  --diagram-background: #dadcec;
+  --diagram-highlight: #4ba7e3;
+  --diagram-secondary-highlight: #9fd6f9;
+}
+
+@media (prefers-color-scheme: light) {
+  :root { 
+    --accent: rgb(31, 59, 75);
+    --accent-alpha-20: rgba(134, 212, 255, 0.7);
+    --accent-alpha-70: rgba(5, 28, 42, 0.78);
+    --background: #dadcec;
+    --color: rgb(0, 0, 0);
+    --border-color: rgba(37, 37, 37, 0.1);
+    --diagram-frontmatter: #373737;
+    --diagram-background: #dadcec;
+    --diagram-highlight: #4ba7e3;
+    --diagram-secondary-highlight: #9fd6f9;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root { 
+    --accent: rgb(35,176,255);
+    --accent-alpha-20: rgba(35,176,255,.2);
+    --accent-alpha-70: rgba(35,176,255,.7);
+    --background: #1D1E28;
+    --color: whitesmoke;
+    --border-color: rgba(255, 255, 255, .1);
+    --diagram-frontmatter: #ffffff;
+    --diagram-background: #1d1e28;
+    --diagram-highlight: #1f5174;
+    --diagram-secondary-highlight: #1e3b53;
+  }
 }
