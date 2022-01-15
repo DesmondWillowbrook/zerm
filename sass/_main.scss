@@ -312,6 +312,12 @@ ol ol {
   }
 }
 
+@media (max-width: $phone-max-width) {
+  .katex-display {
+    overflow: auto;
+  }
+}
+
 .content {
   display: flex;
 }
