@@ -6,7 +6,7 @@ caption="An Array",
 caption_style="font-weight: bold; font-style: italic;") }} #}
 
 {% if src %}
-  <figure class="{% if position %}{{ position }}{% else -%} center {%- endif %}" style="position: relative; width: {% if width %}{{ width }}{% else %}50%{% endif %};">
+  <figure {% if class is defined %}class="{{ class | safe }}"{%- endif %}>
 	{% set src = "content" ~ page.path ~ src %}
 	{% set svg = load_data(path=src, required=true) %}
 	<!--Add proper accessibility to svgs: https://stackoverflow.com/a/4756461/10147642 - if you're reading this in DevTools, and have an idea of how to, feel free to write to me!-->
