@@ -1,52 +1,7 @@
 {%- if src -%}
+	{%- set src = "content" ~ page.path ~ src | replace(from="/", to="%2F") -%}
+	{%- set url = "http://localhost:8000/?file=" ~ src ~ "&head=" ~ head ~ "&tail=" ~ tail -%}
 
-{%- set src = "content" ~ page.path ~ src -%}
-{%- set code = load_data(path=src, format="plain", required=true) -%}
-{%- set code = code | split (pat="\n") -%}
-{%- for l in code -%}
-	{%- if loop.index < head -%}
-		{%- continue -%}
-	{%- endif -%}
-
-{%- if remove_indentation is defined -%}
-{{ l | trim_start_matches(pat="    ") | safe }}
-
-	{%- if loop.index == tail -%}
-		{%- break -%}
-	{%- endif %}
-{{ "" }}
-
-	{%- continue -%}
+	{%- set code = load_data(url=url, format="plain", required=true) -%}
+	{{- code | safe -}}
 {%- endif -%}
-
-{%- if add_indentation is defined -%}
-	{% set pat = "" %}
-	{%- for i in range (start=0, end=add_indentation) %}    {% endfor -%} {# adds four spaces add_indentation times #}
-{%- endif -%}
-
-{{ l | safe }}
-
-	{%- if loop.index == tail -%}
-		{%- break -%}
-	{%- endif %}
-{{ "" }}
-
-{%- endfor -%}
-{%- endif -%}
-
-{#-
-	Incredibly ugly, but I don't care about this enough to change it further.
-	What happens, is that this text is put inside a codefence => normal HTML <br> does NOT work
-	l ~ "\n", l ~ '\n', l ~ `\n` : none of those seem to work.
-	https://tera.netlify.app/docs/#whitespace-control states syntax for whitespace stripping
-	the line before {{ "" }} does NOT truncate whitespace after it.
-	we have to write an empty statement there otherwise newlines seem to be ignored.
-	i.e, if there's a statement on the line and the statements above or below do not strip whitespace, the \n
-	will be present. If there's nothing on the line, and the previous or following statements do not strip whitespace,
-	then "\n" seems to be inconsistently present.
-	The problem with just writing a newline after {{ l | safe }} (i.e. removing truncation from the following statement)
-	is that the newline is added even on the last line, which looks bad.
-	What we want to do is conditionally add the whitespace, but writing the newline addition (i.e ommitting the truncation -)
-	in the if statement is inconsistent.
-	Thus the dummy statement add a newline in the case the loop hasn't been broken yet.
--#}
