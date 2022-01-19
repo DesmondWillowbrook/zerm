@@ -8,6 +8,22 @@
 		{%- continue -%}
 	{%- endif -%}
 
+{%- if remove_indentation is defined -%}
+{{ l | trim_start_matches(pat="    ") | safe }}
+
+	{%- if loop.index == tail -%}
+		{%- break -%}
+	{%- endif %}
+{{ "" }}
+
+	{%- continue -%}
+{%- endif -%}
+
+{%- if add_indentation is defined -%}
+	{% set pat = "" %}
+	{%- for i in range (start=0, end=add_indentation) %}    {% endfor -%} {# adds four spaces add_indentation times #}
+{%- endif -%}
+
 {{ l | safe }}
 
 	{%- if loop.index == tail -%}
