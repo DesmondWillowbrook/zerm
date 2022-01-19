@@ -1,7 +1,0 @@
-{%- if src -%}
-	{%- set src = "content" ~ page.path ~ src | replace(from="/", to="%2F") -%}
-	{%- set url = "http://localhost:8000/?file=" ~ src ~ "&head=" ~ head ~ "&tail=" ~ tail -%}
-
-	{%- set code = load_data(url=url, format="plain", required=true) -%}
-	{{- code | safe -}}
-{%- endif -%}
