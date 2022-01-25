@@ -184,6 +184,34 @@ pre {
   padding: 20px 10px;
   font-size: .95rem;
   overflow: auto;
+  // The line numbers already provide some kind of left/right padding
+  [data-linenos] {
+    padding: 1rem 0;
+  }
+  table td {
+    padding: 0;
+    border: none;
+  }
+  // The line number cells
+  table td:nth-of-type(1) {
+    white-space: nowrap;
+    text-align: center;
+    color: var(--accent-alpha-70);
+    user-select: none;
+    padding-right: 5px;
+  }
+  mark {
+    // If you want your highlights to take the full width.
+    display: block;
+    // The default background colour of a mark is bright yellow
+    background-color: rgba(254, 252, 232, 0.9);
+  }
+
+  table {
+    margin: 5px;
+    width: auto;
+    border: none;
+  }
 
   @media (prefers-color-scheme: dark) {
     border-top: 2px solid rgba(255, 255, 255, .1);
