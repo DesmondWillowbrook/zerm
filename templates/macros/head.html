@@ -6,17 +6,10 @@
     - [ ] maybe google adsense
     -#}
 
-{% macro GA() %}
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MYZFPH3EP5"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag ('create', 'G-MYZFPH3EP5', {cookie_flags: 'SameSite = None; Secure'});
-    </script>
-{% endmacro GA %}
+{% macro analytics() %}
+    <script data-goatcounter="https://desmondwillowbrookblog.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+{% endmacro analytics %}
     
 {% macro fonts() %}
     <link rel="preload" href="{{ get_url(path="/assets/fonts/FiraCode-Regular.woff2") }}" as="font" type="font/woff2" crossorigin="anonymous">
