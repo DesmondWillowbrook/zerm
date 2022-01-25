@@ -200,11 +200,20 @@ pre {
     user-select: none;
     padding-right: 5px;
   }
+
   mark {
     // If you want your highlights to take the full width.
     display: block;
+    color: inherit;
     // The default background colour of a mark is bright yellow
-    background-color: rgba(254, 252, 232, 0.9);
+    background-color: var(--accent-alpha-20);
+  }
+
+  // make mark invisible for line numbers
+  td:nth-of-type(1) mark {
+    display: block;
+    color: var(--accent-alpha-70);
+    background-color: var(--background-color);
   }
 
   table {
