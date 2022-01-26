@@ -1,10 +1,6 @@
-{% if src %}
+<figure class="{% if class is defined %}{{ class | safe }}{% else -%} center {%- endif %}">
+   <img src="{{ src | safe }}"{% if alt %} alt="{{ alt }}"{% endif %} />
    {% if caption %}
-   <figure class="{% if position %}{{ position }}{% else -%} center {%- endif %}">
-      <img src="{{ src | safe }}"{% if alt %} alt="{{ alt }}"{% endif %} class="{% if position %}{{ position }}{% else -%} center {%- endif %}" {%- if style %} style="{{ style | safe }}" {%- endif %} />
-      <figcaption class="{% if position %}{{ position }}{% else -%} center {%- endif %}">{{ caption }}</figcaption>
-   </figure>
-   {% else %}
-   <img src="{{ src | safe }}"{% if alt %} alt="{{ alt }}"{% endif %} class="{% if position %}{{ position }}{% else -%} center {%- endif %}" {%- if style %} style="{{ style | safe }}" {%- endif %} />
+      <figcaption {% if caption_style %} style="{{ caption_style | safe }}"{% endif %}>{{ caption }}</figcaption>
    {% endif %}
-{% endif %}
+</figure>

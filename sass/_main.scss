@@ -115,34 +115,10 @@ p {
   margin-bottom: 20px;
 }
 
-figure, .size-small {
-  max-width: 42.5%;
-}
-
-figure, .size-normal {
-  max-width: 52.5%;
-}
-
-figure, .size-large {
-  max-width: 72.5%;
-}
-
-figure, .center {
-  margin: 25px auto !important;
-}
-
-figure, .left {
-  margin-right: auto;
-}
-
-figure, .right {
-  margin-left: auto;
-}
-
 figure {
-  text-align: center;
   display: table;
-  min-width: 300px;
+  text-align: center;
+  min-width: 400px;
 
   figcaption {
     font-size: 14px;
@@ -150,16 +126,43 @@ figure {
     margin-top: 5px;
     background: var(--background);
     color: var(--accent);
+    display: table-caption;
+    caption-side: bottom;
+  }
 
-    &.left {
-      text-align: left;
-    }
+  &.size-small img, &.size-small svg {
+    max-width: 42.5%;
+  }
 
-    &.center {
+  &.size-medium img, &.size-medium svg {
+    max-width: 57.5%;
+  }
+
+  &.size-large img, &.size-large svg {
+    max-width: 72.5%;
+  }
+
+  &.center {
+    margin: 25px auto;
+    figcaption {
       text-align: center;
     }
+  }
 
-    &.right {
+  &.left {
+    img, svg {
+      float: left;
+    }
+    figcaption {
+      text-align: left;
+    }
+  }
+
+  &.right {
+    img, svg {
+      float: right;
+    }
+    figcaption {
       text-align: right;
     }
   }
@@ -243,13 +246,13 @@ pre {
     word-wrap: break-word;
   }
 
-    code {
-      background: none !important;
-      margin: 0;
-      padding: 0;
-      font-size: inherit;
-      border: none;
-  }
+  code {
+    background: none !important;
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    border: none;
+}
 }
 
 blockquote {
