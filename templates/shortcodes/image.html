@@ -1,4 +1,5 @@
 <figure class="{% if class is defined %}{{ class | safe }}{% else -%} center {%- endif %}">
+   
    <img src="{{ src | safe }}"{% if alt %} alt="{{ alt }}"{% endif %} />
    {% if caption %}
       <figcaption {% if caption_style %} style="{{ caption_style | safe }}"{% endif %}>{{ caption }}</figcaption>
