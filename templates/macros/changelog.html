@@ -1,0 +1,8 @@
+{% macro changelog() %}
+	{%- set src = "content" ~ page.path ~ "changelog.md" -%}
+	{%- set changelog = load_data(path=src, required=false) -%}
+	{%- if changelog -%}
+		<hr>
+		You can find a changelog for this article <a href = "{{ page.permalink ~ "changelog" }}">over here.</a>
+	{%- endif -%}
+{% endmacro changelog %}

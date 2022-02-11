@@ -1,5 +1,6 @@
 {% import "macros/head.html" as head -%}
 {% import "macros/toc.html" as toc -%}
+{% import "macros/changelog.html" as changelog -%}
 {% extends "index.html" -%}
 
 {%- block math -%}
@@ -18,7 +19,7 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="{{ page.permalink  }}">{{ page.title }}</a>
+                <a href="{{ page.permalink }}">{{ page.title }}</a>
             </h1>
             {{ posts::meta(page=page, author=config.extra.show_author) }}
 
@@ -33,8 +34,16 @@
 
         {{ page.content | safe }}
 
-        {{ comments::comments() }}
-        {# TODO: Decide if any sort of commenting functionality is desired? #}
-        {#%- include "snippets/comments.html"  -%#}
+        <br>
+        {{ changelog::changelog() }}
+
+        {% if config.extra.signoff %}
+            <hr>
+            {{ config.extra.signoff | safe }}
+        {% endif %}
     </article>
+
+    {{ comments::comments() }}
+    {# TODO: Decide if any sort of commenting functionality is desired? #}
+    {#%- include "snippets/comments.html"  -%#}
 {%- endblock main -%}
