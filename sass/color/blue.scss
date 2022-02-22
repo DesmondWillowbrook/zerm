@@ -39,3 +39,11 @@
     --diagram-secondary-highlight: #1e3b53;
   }
 }
+
+footer {
+  .extended_footer {
+    img {
+      filter: invert(53%) sepia(88%) saturate(1435%) hue-rotate(176deg) brightness(100%) contrast(106%);
+    }
+  }
+}

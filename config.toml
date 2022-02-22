@@ -119,9 +119,10 @@ read_more = "read more"
 read_other_posts = "read other posts"
 
 # Socials bar
-# github_profile = "https://github.com/"
+github_profile = "https://github.com/ejmg/zerm"
 # email = ""
 # reddit_profile = ""
+# twitter = ""
 
 # to enable, you should also enable generate_feed
 show_rss_badge = false 
