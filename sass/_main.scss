@@ -13,7 +13,7 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	font-family: 'Fira Code', Menlo, DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
+	font-family: 'Iosevka', 'Fira Code', Menlo, DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
 	font-size: 1rem;
 	line-height: 1.54;
 	background-color: var(--background);
@@ -172,7 +172,7 @@ figure {
 @import url("syntax-theme-light.css") (prefers-color-scheme: light);
 
 code {
-	font-family: 'Fira Code', Menlo, DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
+	font-family: 'Iosevka', 'Fira Code', Menlo, DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
 	font-feature-settings: normal;
 	background: var(--accent-alpha-20);
 	padding: 1px 6px;
@@ -180,13 +180,25 @@ code {
 	font-size: .95rem;
 }
 
+pre[data-lang][data-linenos]::before {
+	content: attr(data-lang) '\000A';
+	background-color: var(--accent-alpha-20);
+	font-size: small;
+	display: inline-block;
+	color: white;
+	text-transform: capitalize;
+	padding: 5px 10px;
+	margin-right: auto;
+	border-radius: 1px 1px 10px 1px;
+}
+
 pre {
-	font-family: 'Fira Code', Menlo, DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
+	font-family: 'Iosevka', 'Fira Code', Menlo, DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
 	font-feature-settings: "liga";
 	padding: 0px;
 	font-size: .95rem;
 	tab-size: 4;
-	overflow: scroll;
+	overflow: auto;
 
 	.language-name {
 		overflow: none;
@@ -256,6 +268,12 @@ pre {
 			color: var(--accent-alpha-70);
 			user-select: none;
 			padding-right: 5px;
+			border-right: 2px solid rgba(255,255,255,0.1);
+			margin-right: 3px;
+		}
+
+		table td:nth-of-type(2) {
+			padding-left: 7px;
 		}
 	}
 }
