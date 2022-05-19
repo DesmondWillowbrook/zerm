@@ -171,31 +171,25 @@ figure {
 @import url("syntax-theme-dark.css") (prefers-color-scheme: dark);
 @import url("syntax-theme-light.css") (prefers-color-scheme: light);
 
-code {
-	font-family: 'Iosevka', 'Fira Code', Menlo, DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
-	font-feature-settings: normal;
-	background: var(--accent-alpha-20);
-	padding: 1px 6px;
-	margin: 0 2px;
-	font-size: .95rem;
-}
-
 pre[data-lang][data-linenos]::before {
 	content: attr(data-lang) '\000A';
 	background-color: var(--accent-alpha-20);
 	font-size: small;
 	display: inline-block;
-	color: white;
+	color: var(--color);
 	text-transform: capitalize;
 	padding: 5px 10px;
 	margin-right: auto;
 	border-radius: 1px 1px 10px 1px;
 }
 
+pre:not([data-linenos]) {
+	padding: 10px 0px 10px 15px;
+}
+
 pre {
 	font-family: 'Iosevka', 'Fira Code', Menlo, DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
 	font-feature-settings: "liga";
-	padding: 0px;
 	font-size: .95rem;
 	tab-size: 4;
 	overflow: auto;
@@ -221,9 +215,9 @@ pre {
 	}
 
 	code {
-		background: none !important;
-		margin: 0;
-		padding: 0;
+		font-family: 'Iosevka', 'Fira Code', Menlo, DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
+		font-feature-settings: normal;
+		font-size: .95rem;
 		font-size: inherit;
 		border: none;
 
