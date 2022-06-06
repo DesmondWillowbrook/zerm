@@ -219,6 +219,7 @@ pre {
 		font-feature-settings: normal;
 		font-size: .95rem;
 		font-size: inherit;
+		background-color: inherit;
 		border: none;
 
 		@media (max-width: $phone-max-width) {
@@ -270,6 +271,10 @@ pre {
 			padding-left: 7px;
 		}
 	}
+}
+
+code {
+	background-color: var(--accent-alpha-20);
 }
 
 blockquote {
