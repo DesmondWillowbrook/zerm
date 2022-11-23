@@ -81,9 +81,13 @@
 {% endmacro categories %}
 
 {% macro tags(tags) %}
+    {%- if tags.first -%}
     ::
+    {%- endif -%}
     {% for tag in tags -%}
-        #<a href="{{get_taxonomy_url(kind="tags", name=tag )}}">{{ tag }}</a>
-        {# end of tags for-loop #}
+        {%- if tag -%}
+            #<a href="{{get_taxonomy_url(kind="tags", name=tag )}}">{{ tag }}</a>
+            {# end of tags for-loop #}
+        {%- endif -%}
     {% endfor -%}
 {% endmacro tags %}
