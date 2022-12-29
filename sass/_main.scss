@@ -118,7 +118,7 @@ p {
 figure {
 	display: table;
 	text-align: center;
-	min-width: 300px;
+	min-width: 400px;
 
 	figcaption {
 		font-size: 14px;
@@ -130,16 +130,20 @@ figure {
 		caption-side: bottom;
 	}
 
-	&.size-small img, &.size-small svg {
-		max-width: 42.5%;
+	&.size-small {
+		width: 50%;
 	}
 
-	&.size-medium img, &.size-medium svg {
-		max-width: 57.5%;
+	&.size-smallish {
+		width: 65%;
 	}
 
-	&.size-large img, &.size-large svg {
-		max-width: 72.5%;
+	&.size-medium {
+		width: 75%;
+	}
+
+	&.size-large {
+		width: 100%;
 	}
 
 	&.center {
