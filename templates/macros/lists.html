@@ -19,7 +19,7 @@
 
         <div class="post-content">
             {%  if page.description -%}
-            {{ page.description }}
+            {{ page.description | markdown | safe }}
             {#- end if-check for description -#}
             {%  elif page.summary -%}
             {{ page.summary | safe }}
