@@ -32,7 +32,7 @@
 
 {% macro rss() %}
     {%- if config.generate_feed -%}
-        <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="{{ config.title }} RSS" href="{{ get_url(path=config.feed_filename) }}">
+        <link rel="alternate" type={% if config.extra.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="{{ config.title }} RSS" href="{{ get_url(path=config.extra.feed_filename) }}">
     {%- endif -%}
 {% endmacro rss %}
 

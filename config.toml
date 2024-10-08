@@ -15,7 +15,7 @@ generate_feed = true
 # 'atom.xml' (default if unspecified) and 'rss.xml' are officially supported
 # values for feed_filename in this theme. All other filenames will assume a
 # link type of 'application/rss+xml'.
-# feed_filename = "atom.xml"
+feed_filename = "atom.xml"
 
 # Theme name to use.
 # NOTE: should not need to mess with this if you are using zerm directly, i.e. cloning the

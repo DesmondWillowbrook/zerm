@@ -1,7 +1,7 @@
 {% macro extended_footer() %}
    <div class="extended_footer">
       {%- if config.generate_feed and config.extra.show_rss_badge -%}
-      <a href="{{ get_url(path=config.feed_filename) }}" style="text-decoration:none" title="RSS Feed">
+      <a href="{{ get_url(path=config.extra.feed_filename) }}" style="text-decoration:none" title="RSS Feed">
          {%- set rss_image =  resize_image(path="../static/assets/social/rss.png", width=22, height=22, op="scale", format="png") -%}
          <img src="{{ rss_image.url }}" style="display:inline" alt="RSS Badge" />
       </a>
