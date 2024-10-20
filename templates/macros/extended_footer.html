@@ -20,19 +20,5 @@
          <img src="{{ email_image.url }}" style="display:inline" alt="Email Badge" />
       </a>
       {%- endif -%}
-
-      {%- if config.extra.twitter -%}
-      <a href="{{ config.extra.twitter}}" style="text-decoration:none"  title="Kartavya Vashishtha's Twitter">
-         {%- set twitter_image =  resize_image(path="../static/assets/social/twitter.png", width=22, height=22, op="scale", format="png") -%}
-         <img src="{{ twitter_image.url }}" style="display:inline" alt="Twitter Badge" />
-      </a>
-      {%- endif -%}
-
-      {%- if config.extra.reddit_profile -%}
-      <a href="{{ config.extra.reddit_profile}}" style="text-decoration:none" title="Kartavya Vashishtha's Reddit">
-         {%- set reddit_image =  resize_image(path="../static/assets/social/reddit.png", width=22, height=22, op="scale", format="png") -%}
-         <img src="{{ reddit_image.url }}" style="display:inline" alt="Reddit Badge" />
-      </a>
-      {%- endif -%}
    </div>
 {% endmacro extended_footer %}
