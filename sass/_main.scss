@@ -124,7 +124,7 @@ figure {
 		padding: 5px 10px;
 		margin-top: 5px;
 		background: var(--background);
-		color: var(--accent);
+		color: var(--color);
 		display: table-caption;
 		caption-side: bottom;
 	}
@@ -259,7 +259,6 @@ pre {
 		table td:nth-of-type(1) {
 			white-space: nowrap;
 			text-align: center;
-			color: var(--accent-alpha-70);
 			user-select: none;
 			padding-right: 5px;
 			border-right: 2px solid rgba(255,255,255,0.1);

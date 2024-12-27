@@ -36,15 +36,11 @@
   &-meta {
     font-size: 1rem;
     margin-bottom: 5px;
-    color: var(--accent-alpha-70);
   }
 
   &-title {
-    --border: 3px dotted var(--accent);
     position: relative;
-    color: var(--accent);
-    margin: 0 0 15px;
-    padding-bottom: 15px;
+    margin: 0 0 5px;
     border-bottom: var(--border);
 
     &:after {
@@ -63,36 +59,6 @@
 
   &-content {
     margin-top: 5px;
-  }
-
-  ul {
-    list-style: none;
-
-    li:before {
-      content: '⦿';
-      position: absolute;
-      left: -20px;
-      color: var(--accent);
-    }
-    ul {
-
-      li:before {
-        content: '■';
-        position: absolute;
-        left: -20px;
-        color: var(--accent);
-      }
-
-      ul {
-
-        li:before {
-          content: '►';
-          position: absolute;
-          left: -20px;
-          color: var(--accent);
-        }
-      }
-    }
   }
 }
 
